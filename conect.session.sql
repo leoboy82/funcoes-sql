@@ -1,3 +1,20 @@
-SELECT COUNT(*) AS total_clientes
-FROM tabela_clientes
-WHERE DATE(data_cadastro) = CURDATE();
+CREATE FUNCTION total_clientes_dia(data DATE)
+RETURNS INT AS $$
+DECLARE
+    total_clientes INT;
+BEGIN
+    SELECT COUNT(*) INTO total_clientes
+    FROM clientes
+    WHERE DATE(data_cadastro) = data;
+
+    RETURN total_clientes;
+END; $$
+
+
+
+
+
+
+
+
+
