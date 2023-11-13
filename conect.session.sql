@@ -9,7 +9,7 @@ BEGIN
 
     RETURN total_clientes;
 END; $$
-
+LANGUAGE plpgsql;
 
 
 
